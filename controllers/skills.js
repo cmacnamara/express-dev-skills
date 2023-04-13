@@ -17,8 +17,20 @@ function newTodo(req,res) {
   res.render('skills/new')
 }
 
+function create(req,res) {
+  req.body.favorite = false;
+  Skill.create(req.body)
+  .then(skill => {
+    res.redirect('/skills')
+  })
+  .catch(error => {
+    console.log(error);
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newTodo as new,
-
+  create,
 }

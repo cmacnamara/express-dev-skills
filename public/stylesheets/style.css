@@ -1,8 +1,51 @@
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #9FA99F;
+  color: whitesmoke;
+  height: 100%;
+  width: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  text-shadow: #FC0 1px 0 10px;
+  text-decoration: none;
+}
+
+#new-skill-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1em;
+  background-color: #648064;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+button {
+  color: whitesmoke;
+  background-color: #AAc7AA;
+  border: solid whitesmoke 1px;
+  border-radius: 10px;
+}
+
+#sbmt-new-skill {
+  width: 50%;
+  transition: 0.25s;
+}
+
+#sbmt-new-skill:hover {
+  background-color: #8B9C8B;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#sbmt-new-skill:active {
+  transform: scale(1);
 }
