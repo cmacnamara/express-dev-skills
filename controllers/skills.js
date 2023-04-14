@@ -71,8 +71,9 @@ function edit(req,res) {
 function update(req,res) {
   req.body.favorite = !!req.body.favorite;
   console.log(req.body);
-  Skill.findByIdAndUpdate(req.param.skillId, req.body, {new: true})
+  Skill.findByIdAndUpdate(req.params.skillId, req.body, {new: true})
   .then(skill => {
+    console.log('Edited skill', skill);
     res.redirect('/skills')
   })
   .catch(error => {
