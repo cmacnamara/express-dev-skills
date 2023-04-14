@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Edit Skill</title>
+</head>
+<body>
+  <h1>Edit Skill</h1>
+  <form 
+    action="/skills/<%= skill._id %>?_method=PUT" 
+    method="POST" 
+    autocomplete="off" 
+    id="new-skill-form">
+    <div>
+      Skill: <input type="text" name="name" value=<%= skill.name %>>
+    </div>
+    <div>
+      Proficiency Level: 
+      <select name="proficiency" id="prof-select">
+        <option value="No experience" <%= skill.proficiency === 'No experience' ? 'selected' : '' %>>No experience</option>
+        <option value="Novice" <%= skill.proficiency === 'Novice' ? 'selected' : '' %>>Novice</option>
+        <option value="Intermediate" <%= skill.proficiency === 'Intermediate' ? 'selected' : '' %>>Intermediate</option>
+        <option value="Advanced" <%= skill.proficiency === 'Advanced' ? 'selected' : '' %>>Advanced</option>
+      </select>
+    </div>
+    <div>
+      Favorite? 
+      <input type="checkbox" name="favorite" <%= skill.favorite ? 'checked' : '' %>>
+    </div>
+    <button id="sbmt-new-skill" type="submit">Save Skill</button>
+  </form>
+</body>
+</html>
