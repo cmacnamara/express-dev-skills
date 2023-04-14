@@ -52,3 +52,17 @@ button {
 #sbmt-new-skill:active {
   transform: scale(1);
 }
+
+.delete-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+	
+.delete-form button {
+  color: red;
+}
+	
+li {
+  list-style: none;
+  margin: 10px;
+}

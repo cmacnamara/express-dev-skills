@@ -8,10 +8,17 @@
   <title>Express Dev Skills</title>
 </head>
 <body>
-  <h1>Dev Skills</h1>
-  <ul>
+  <h1>Dev Skills as of <%= time %></h1>
+  <ul id="skill-list">
     <% skills.forEach(skill => { %>
       <li>
+        <form 
+          action="/skills/<%= skill._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
         <a href="/skills/<%= skill._id %>"><%= skill.name %></a>
 				- 
 				<%= skill.proficiency %>
